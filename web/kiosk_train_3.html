@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #E2EEF0;
+        }
+
+        .endHeader {
+            background-color: rgb(121, 121, 121);
+            height: 50px;
+            border-radius: 0 0 5px 5px;
+            color: white;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 25px;
+            padding: 7px 0 0 0;
+            text-align: center;
+        }
+
+        .question {
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            margin: 70px 0 50px;
+
+        }
+
+        .detail {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .btnCont {
+            text-align: center;
+            margin: 70px 0;
+        }
+
+        .Div {
+            border: 1px solid black;
+            width: 45%;
+            display: inline-block;
+            margin: 20px 5px 10px;
+            height: 35px;
+            border-radius: 4px;
+            font-size: 20px;
+            padding: 5px 0 0;
+            color: white;
+        }
+
+        .Div.red {
+            background-color: rgb(212, 54, 54);
+            border-color: rgb(212, 54, 54);
+            animation: neon 2s ease infinite;
+            -moz-animation: neon 2s ease infinite;
+            -webkit-animation: neon 2s ease infinite;
+        }
+
+        .Div.gray {
+            background-color: rgb(121, 121, 121);
+            border-color: rgb(121, 121, 121);
+        }
+
+        @keyframes neon {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16;
+
+            }
+
+            50% {
+                box-shadow: 0 0 .0 #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="endHeader">출발 일시 선택</div>
+    <div class="question">오늘 출발하십니까?</div>
+    <div class="detail">다른 날짜에 출발하시면 <br> '출발일 선택'을 선택하세요.</div>
+
+    <div class="btnCont">
+        <div class="red Div">오늘 출발</div>
+        <div class="gray Div">출발일 선택</div>
+    </div>
+</body>
+
+</html>

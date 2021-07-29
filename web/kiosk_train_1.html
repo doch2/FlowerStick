@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #E2EEF0;
+            height: 100vh;
+        }
+
+
+
+        .logo {
+            color: #1d77a1;
+            font-weight: bolder;
+        }
+
+        .startBtn {
+            text-align: center;
+        }
+
+        .start.sp {
+            background-color: rgb(219, 46, 46);
+
+            animation: neon 2s ease infinite;
+            -moz-animation: neon 2s ease infinite;
+            -webkit-animation: neon 2s ease infinite;
+        }
+
+        @keyframes neon {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16;
+                color: white;
+            }
+
+            50% {
+                box-shadow: 0 0 .0 #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B;
+                color: white;
+            }
+        }
+
+        .start.norm {
+            background-color: rgba(41, 148, 197, 0.781);
+        }
+
+        .start {
+            width: 45%;
+            height: 100px;
+            display: inline-block;
+            font-family: 'Noto Sans KR', sans-serif;
+            color: white;
+            font-size: 27px;
+            line-height: 95px;
+        }
+
+
+        .helloText {
+            text-align: center;
+            font-size: 25px;
+            font-family: 'Nanum Pen Script', cursive;
+            margin: 80px;
+        }
+
+        .balloon_01 {
+            position: relative;
+            margin: 50px;
+            width: 260px;
+            height: 50px;
+            background: #ffca60;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px 5px;
+            box-shadow: 3px 3px 10px gray;
+            text-shadow: 0 0 2px gray;
+            transition: 2s ease all;
+        }
+
+        .balloon_01:after {
+            border-top: 0px solid transparent;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid #ffca60;
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="logo">KORAIL</div>
+
+    <div class="helloText">쉬운 예매! <br> 안전하고 편안한 여행!</div>
+
+    <div class="startBtn">
+        <div onclick="location.href='kiosk_train_2.html'" class="start sp">
+            빠른구매
+        </div>
+        <div class="start norm">
+            일반구매
+        </div>
+    </div>
+
+    <div class="balloon_01">빨간색으로 깜빡거리는 것을 눌러 기차 예매를 연습해보세요!</div>
+
+    <script>
+        let bubble = document.querySelector('.balloon_01');
+
+        setTimeout(() => {
+            bubble.style.opacity = 0
+        }, 4000)
+    </script>
+
+</body>
+
+</html>
