@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:system_alert_window/system_alert_window.dart';
 import 'package:flowerstick/screens/studyOverlay.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -19,11 +18,6 @@ class _ServiceStudy extends State<ServiceStudy> {
 
   @override
   Widget build(BuildContext context) {
-    final _height = MediaQuery.of(context).size.height;
-    final _width = MediaQuery.of(context).size.width;
-
-    StudyOverlay studyOverlay = new StudyOverlay();
-    studyOverlay.openNewOverlay();
 
     return WebView(
       initialUrl: studyUrl,
