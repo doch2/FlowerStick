@@ -73,7 +73,7 @@ class _DetailSelectStudyTypeMenu extends State<DetailSelectStudyTypeMenu> {
                           width: _width * 0.007,
                         ),
                         Text(
-                          "지팡이",
+                          "꽃팡이",
                           style: detailSelectStudyType_subTitle2,
                         ),
                       ],
@@ -280,7 +280,7 @@ final List<Map> articles = [
     "title": "키오스크 사용하기",
     "description": "키오스크는\n무인단말기입니다.",
     "image": "assets/images/kiosk.png",
-    "page": ServiceStudy(studyUrl: "https://doch2.github.io/helloNewWorld_luna2021/web/kiosk_train_1.html")
+    "page": ServiceStudy(studyUrl: "https://doch2.github.io/FlowerStick/web/kiosk_train_1.html")
   },
   {
     "title": "코로나 정보 확인하기",
