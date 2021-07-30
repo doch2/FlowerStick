@@ -25,3 +25,6 @@ final detailSelectStudyType_boxDescription = TextStyle(
     fontSize: 14, fontFamily: 'NanumSquare', fontWeight: FontWeight.w500, color: Color(0xFF707070));
 final detailSelectStudyType_boxButton = TextStyle(
     fontSize: 20, fontFamily: 'NanumSquare', fontWeight: FontWeight.w700, color: Colors.white);
+
+final overlay_description = TextStyle(
+    fontSize: 15, fontFamily: 'NanumSquare', fontWeight: FontWeight.w900, color: Colors.black);
