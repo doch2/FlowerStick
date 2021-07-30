@@ -171,7 +171,7 @@
                     let todayInfo = res.data[553]
                     let yestInfo = res.data[552]
                     
-                    plus = [todayInfo.Confirmed - yestInfo.Confirmed, todayInfo.Recovered - yestInfo.Recovered, todayInfo.Deaths = yestInfo.Deaths]
+                    plus = [todayInfo.Confirmed - yestInfo.Confirmed, todayInfo.Recovered - yestInfo.Recovered, todayInfo.Deaths - yestInfo.Deaths]
                     
                     todayCnt = todayInfo.Date.split('-')
                     year = todayCnt[0]
