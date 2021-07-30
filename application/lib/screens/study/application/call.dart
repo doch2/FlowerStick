@@ -5,14 +5,14 @@ import 'package:flutter/services.dart';
 import 'package:system_alert_window/system_alert_window.dart';
 import 'package:flowerstick/screens/studyOverlay.dart';
 
-class BaeMin extends StatefulWidget {
-  const BaeMin({Key? key}) : super(key: key);
+class Call extends StatefulWidget {
+  const Call({Key? key}) : super(key: key);
 
   @override
-  _BaeMin createState() => _BaeMin();
+  _Call createState() => _Call();
 }
 
-class _BaeMin extends State<BaeMin> {
+class _Call extends State<Call> {
 
   @override
   void initState() {
@@ -25,13 +25,13 @@ class _BaeMin extends State<BaeMin> {
     final _height = MediaQuery.of(context).size.height;
     final _width = MediaQuery.of(context).size.width;
 
-    StudyOverlay studyOverlay = new StudyOverlay(width: _width, height: _height, locTop: (_height * 0.5).round(), description: "배달 창입니다.\n집으로 음식을 배달시키시려면 여기를 누르세요.");
+    StudyOverlay studyOverlay = new StudyOverlay(width: _width, height: _height, locTop: (_height * 0.5).round(), description: "표시된 버튼을 눌러\n전화를 할 수 있습니다.");
     studyOverlay.openNewOverlay();
     //openNewOverlay(_width, _height, (_height * 0.2).round(), "배달 창입니다.\n집으로 음식을 배달시키시려면 여기를 누르세요.");
     LaunchApp.openApp(
-      androidPackageName: "com.sampleapp",
+      androidPackageName: "com.google.android.dialer",
       appStoreLink:
-      'itms-apps://https://play.google.com/store/apps/details?id=com.sampleapp',
+      'itms-apps://https://play.google.com/store/apps/details?id=com.google.android.dialer',
     );
 
 
@@ -48,8 +48,10 @@ void callBack(String tag) {
   print(tag);
   switch (tag) {
     case "next_button":
-      StudyOverlay studyOverlay = new StudyOverlay(width: 1080, height: 1920, locTop: (1920 * 0.5).round(), description: "표시된 메뉴를 눌러\n주문할 수 있습니다.");
+      StudyOverlay studyOverlay = new StudyOverlay(width: 1080, height: 1920, locTop: (1920 * 0.5).round(), description: "표시된 키패드를 눌러\n전화를 걸 수 있습니다.");
       studyOverlay.openNewOverlay();
       break;
+    default:
+      print("OnClick event of $tag");
   }
 }

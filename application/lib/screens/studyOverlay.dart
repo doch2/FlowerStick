@@ -5,8 +5,9 @@ import 'package:system_alert_window/system_alert_window.dart';
 class StudyOverlay {
   final double width, height;
   final int locTop;
+  final String description;
 
-  const StudyOverlay({Key? key, required this.width, required this.height, required this.locTop});
+  const StudyOverlay({Key? key, required this.width, required this.height, required this.locTop, required this.description});
 
   void openNewOverlay() {
     SystemWindowHeader header = SystemWindowHeader(
@@ -23,7 +24,7 @@ class StudyOverlay {
         EachRow(
           columns: [
             EachColumn(
-              text: SystemWindowText(text: "안녕하세요 반갑습니다.", fontSize: 20, textColor: Colors.black, fontWeight: FontWeight.BOLD),
+              text: SystemWindowText(text: description, fontSize: 17, textColor: Colors.black, fontWeight: FontWeight.BOLD),
             ),
           ],
           gravity: ContentGravity.CENTER,
@@ -31,7 +32,7 @@ class StudyOverlay {
         EachRow(
           columns: [
             EachColumn(
-              text: SystemWindowText(text: " ", fontSize: 10, textColor: Colors.black54, fontWeight: FontWeight.BOLD),
+              text: SystemWindowText(text: " ", fontSize: 2, textColor: Colors.black54, fontWeight: FontWeight.BOLD),
             ),
           ],
           gravity: ContentGravity.LEFT,
@@ -55,7 +56,7 @@ class StudyOverlay {
         decoration: SystemWindowDecoration(startColor: overlayColor),
         buttonsPosition: ButtonPosition.CENTER);
     SystemAlertWindow.showSystemWindow(
-        height: (height * 0.19).round(),
+        height: (height * 0.25).round(),
         width: (width * 0.8).round(),
         header: header,
         body: body,

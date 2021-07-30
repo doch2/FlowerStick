@@ -1,5 +1,7 @@
 import 'package:flowerstick/painter/bnbCustomPainter.dart';
 import 'package:flowerstick/screens/study/application/baemin.dart';
+import 'package:flowerstick/screens/study/application/call.dart';
+import 'package:flowerstick/screens/study/application/mail.dart';
 import 'package:flowerstick/screens/study/serviceStudy.dart';
 import 'package:flowerstick/themes/color_theme.dart';
 import 'package:flowerstick/themes/text_theme.dart';
@@ -284,15 +286,15 @@ final List<Map> articles = [
   },
   {
     "title": "코로나 정보 확인하기",
-    "description": "코로나에 대해 알아야\n우리 모두 건강할 수 있습니다.",
+    "description": "지피지기면 백전백승!\n건강을 지키기 위해 코로나에 대해 알아봅시다.",
     "image": "assets/images/covid.png",
-    "page": ServiceStudy(studyUrl: "https://www.google.com/")
+    "page": ServiceStudy(studyUrl: "https://doch2.github.io/FlowerStick/web/corona.html")
   },
   {
-    "title": "키오스크 사용하기33",
-    "description": "키오스크는\n무인단말기입니다.",
-    "image": "assets/images/kiosk.png",
-    "page": ServiceStudy(studyUrl: "https://www.google.com/")
+    "title": "코로나 잔여백신 예약하기",
+    "description": "코로나을 물리칠 수 있는\n잔여백신 예약입니다.",
+    "image": "assets/images/vaccine.png",
+    "page": ServiceStudy(studyUrl: "https://m.place.naver.com/rest/vaccine?vaccineFilter=used")
   },
   {
     "title": "배달의 민족 사용하기",
@@ -301,15 +303,15 @@ final List<Map> articles = [
     "page": BaeMin()
   },
   {
-    "title": "배달의 민족 사용하기22",
-    "description": "배달의 민족은 \n집까지 배달해줍니다.",
-    "image": "assets/images/baeminLogo.png",
-    "page": BaeMin()
+    "title": "전화 사용하기",
+    "description": "휴대폰의 전화 기능은\n우리의 일상을 바꾸어놓았습니다.",
+    "image": "assets/images/phoneCall.png",
+    "page": Call()
   },
   {
-    "title": "배달의 민족 사용하기33",
-    "description": "배달의 민족은 \n집까지 배달해줍니다.",
-    "image": "assets/images/baeminLogo.png",
-    "page": BaeMin()
+    "title": "문자 기능 사용하기",
+    "description": "휴대폰의 문자 기능은\n우리의 일상을 바꾸어놓았습니다.",
+    "image": "assets/images/mail.png",
+    "page": Mail()
   },
 ];

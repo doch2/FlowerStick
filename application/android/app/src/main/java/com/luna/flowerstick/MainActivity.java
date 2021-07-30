@@ -19,23 +19,4 @@ public class MainActivity extends FlutterActivity {
         super.onCreate(savedInstanceState);
         GeneratedPluginRegistrant.registerWith(this);
     }
-
-    @Override
-    public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
-        GeneratedPluginRegistrant.registerWith(flutterEngine);
-        final MethodChannel channel = new MethodChannel(flutterEngine.getDartExecutor(), "com.luna.flowerstick.methodchannel");
-        channel.setMethodCallHandler(handler);
-    }
-
-    private MethodChannel.MethodCallHandler handler = (methodCall, result) -> {
-        if (methodCall.method.equals("openBaeMinApp")) {
-            ComponentName compName = new ComponentName("com.sampleapp");
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.setComponent(compName);
-            startActivity(intent);
-            result.success("success");
-        } else {
-            result.notImplemented();
-        }
-    };
 }
