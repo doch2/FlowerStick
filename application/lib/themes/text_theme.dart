@@ -2,6 +2,13 @@ import 'package:flutter/material.dart';
 
 import 'color_theme.dart';
 
+final permission_boxTitle = TextStyle(
+    fontSize: 20, fontFamily: 'NanumSquare', fontWeight: FontWeight.w900);
+final permission_boxSubTitle = TextStyle(
+    fontSize: 17, fontFamily: 'NanumSquare', fontWeight: FontWeight.w700);
+final permission_boxDescription = TextStyle(
+    fontSize: 14, fontFamily: 'NanumSquare', fontWeight: FontWeight.w500);
+
 final mainSelectStudyType_boxTitle = TextStyle(
     fontSize: 20, fontFamily: 'NanumSquare', fontWeight: FontWeight.w700, color: Colors.white);
 

@@ -24,7 +24,7 @@ class _MyApp extends State<MyApp> {
     if (!_havePermission) { _openWidget = RequirePermission(); }
   }
 
-  bool _havePermission = true;
+  bool _havePermission = false;
   Widget? _openWidget = MainSelectStudyTypeMenu();
 
   @override
