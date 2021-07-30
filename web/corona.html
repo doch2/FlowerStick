@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <style>
+        html{
+            height: 100vh;
+        }
+        body{
+            margin: 0;
+            background: linear-gradient( to bottom, #fffbf2,#fff2b1);
+            height: 100vh;
+        }
+
+        .circle{
+            background-color: white;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: -7%;
+            left: 66%;
+            border-radius: 50%;
+            z-index: -1;
+        }
+        .header{ 
+            
+            height: 35px;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 40px  35px;
+            color: rgb(44, 43, 43);
+            
+            
+        }
+        .container{
+            text-align: center;
+            width: 80%;
+            height: 75%;
+            background-color: white;
+            margin:  10px auto;
+            border-radius: 20px;
+            box-shadow: 3px 6px 9px gray;
+            
+        }
+        .present{
+            margin: 0;
+            padding: 8px 0 0 ;
+            width: 46%;
+            height: 30px;
+            font-size: 19px;
+           
+            font-weight: bold;
+            text-align: center;
+            display: inline-block;
+            margin-top: 30px;
+            
+        }
+
+        .present.vaccine{
+            color: gray;
+            opacity: 0.5;
+            border-left: 1px solid gray;
+        }
+        
+
+        
+
+        .infoCont{
+            margin: auto;
+            width: 100%;
+            padding: 40px 0;
+            
+            
+            
+        }
+
+        .infoCont > div{
+            margin: 5px auto;
+            border-bottom: 1px solid rgba(128, 128, 128, 0.212);
+            padding: 25px 0;
+            width: 83%;
+            
+        }
+
+        
+
+        .infoCont  .title{
+            font-size: 19px;
+            font-weight: bold;
+            margin: 0 60px 0 0;
+            
+        }
+
+        .title.ju{
+            margin: 0 85px 0 0;
+        }
+
+        .infoCont .num{
+            color: #f5b943;
+            font-weight: bold;
+            font-size: 21px;
+        }
+
+        .plus{
+            color: #7759F1;
+            font-size: 20px;
+            font-weight: bold;
+            
+        }
+    
+        
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <img src="" alt="">
+        코로나 정보
+    </div>
+
+    <div class="container">
+        <div class="btnCont">
+            <div class="present">감염현황</div>
+            <div class="present vaccine">백신접종현황</div>
+        </div>
+        
+        <div class="infoCont">
+            <div>
+                <span class="title">확진환자</span> 
+                <span class="num confirmed"></span> <br><br>
+                <span class="plus"></span>
+            </div>
+            <div>
+                
+                <span class="title">격리해제</span>
+                <span class="num recovered"></span> <br><br>
+                <span class="plus"></span>
+            </div>
+            <div>
+                
+                <span class="title ju">사망자</span>
+                <span class="num death"></span> <br> <br>
+                <span class="plus"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="circle"></div>
+    
+    <script>
+        const url = "https://api.covid19api.com/total/dayone/country/kr"
+        let todayCnt = 0
+        let year, month, date = 0
+        let plus = []
+        let todaysNum = document.querySelectorAll('.plus')
+        let confirmedNum = document.querySelector('.confirmed')
+        let recoveredNum = document.querySelector('.recovered')
+        let deathNum = document.querySelector('.death')
+
+
+        let getInfo = function(){
+            axios.get(url).then(
+                (res) => {
+                    console.log(res.data)
+                    let todayInfo = res.data[553]
+                    let yestInfo = res.data[552]
+                    
+                    plus = [todayInfo.Confirmed - yestInfo.Confirmed, todayInfo.Recovered - yestInfo.Recovered, todayInfo.Deaths = yestInfo.Deaths]
+                    
+                    todayCnt = todayInfo.Date.split('-')
+                    year = todayCnt[0]
+                    month = todayCnt[1]
+                    date = todayCnt[2].substring(0, 2)
+                    
+                    confirmedNum.innerHTML = todayInfo.Confirmed
+                    recoveredNum.innerHTML = todayInfo.Recovered
+                    deathNum.innerHTML = todayInfo.Deaths
+
+                    
+
+                    for(let i = 0; i < 3; i++){
+                        todaysNum[i].innerHTML = "+" + plus[i] + "명"
+                    }
+                }
+            )
+        }
+
+        
+
+        
+
+        window.onload = getInfo;
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+<!-- var xhr = new XMLHttpRequest();
+        var url = 'http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19InfStateJson'; /*URL*/
+        var queryParams = '?' + encodeURIComponent('ServiceKey') + '=' + 'NjSkmOn/moJOv/GU0LWNbDMktB9+S+MWr0j8pPfXunWkNPdTp1sFKi31Vh2esv8l6mroH9+HAvL5MvJG19nM1w=='; /*Service Key*/
+        queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
+        queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
+        queryParams += '&' + encodeURIComponent('startCreateDt') + '=' + encodeURIComponent('20200310'); /**/
+        queryParams += '&' + encodeURIComponent('endCreateDt') + '=' + encodeURIComponent('20200315'); /**/
+        xhr.open('GET', url + queryParams);
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                alert('Status: ' + this.status + 'nHeaders: ' + JSON.stringify(this.getAllResponseHeaders()) + 'nBody: ' + this.responseText);
+            }
+        };
+
+        xhr.send(''); -->
